@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom"
 
 import classes from "../../styles/signin/signinPage.style"
 
+import '../../scss/signin.scss'
+
 function SignInPage() {
     const navigate = useNavigate()
     return (
-        <Box>
+        <Box
+            className="signInBox" // sass method eka
+        >
             <Typography
                 variant="h4"
-                sx={classes.signInBoxTitle}
+                sx={classes.signInBoxTitle} // mui style object method eka
             >Sign In Page</Typography>
             <Button
                 variant="contained"
@@ -24,7 +28,7 @@ function SignInPage() {
                 sx={{
                     color: 'red',
                     fontSize: '1.5rem'
-                }}
+                }} //inline css method eka
 
             >Inline css</Typography>
         </Box>
