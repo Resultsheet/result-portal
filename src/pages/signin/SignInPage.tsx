@@ -1,9 +1,9 @@
 import { Box, Button, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 
-import classes from "../../styles/signin/signinPage.style"
+import classes from "@/styles/signin/signinPage.style"
 
-import '../../scss/signin.scss'
+import '@/scss/signin.scss'
 
 function SignInPage() {
     const navigate = useNavigate()
