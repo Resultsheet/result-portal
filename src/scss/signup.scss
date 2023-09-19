@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 20;
 }
-.signInBox {
+.signUpBox {
     padding: 20px;
     background: #f8f8f8 !important;
     height: 100vh;
@@ -14,37 +14,32 @@
     gap: 14px;
     margin: 30;
 }
-.signInForm{
+.signUpForm{
     width: 100%; 
     max-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
-.rememberMe{
+.agree{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
-.signUp{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.customThumbColor {
+    color: green; 
 }
-
 .imageBox{
     width: 100vh;
     height: 100vh;
     overflow: hidden;
 }
-.signUpImage{
+.signInImg{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 @media (max-width: 768px) {
     .imageBox{
         display: none;

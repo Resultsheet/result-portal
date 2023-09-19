@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 import classes from "@/styles/signin/signinPage.style"
 
+import im from '@/assets/images/signIn.png'
 import '@/scss/signin.scss'
 
 function SignInPage() {
@@ -43,7 +44,7 @@ function SignInPage() {
                     </FormControl>
                     <Box className='rememberMe'>
                         <FormControlLabel 
-                            control={<Switch  color="primary" />}
+                            control={<Switch  color="default" />}
                             label={
                                 <Typography variant="body2" style={{ fontSize: '14px' }}>
                                     Remember me
@@ -61,8 +62,7 @@ function SignInPage() {
                         color="success"
                         sx={classes.signInBoxButton}
                         onClick={() => {
-                            navigate('')
-                            // navigate('/auth/signup')
+                            navigate('/auth/classes')
                         }}
                     >Sign In
                     </Button>
@@ -70,14 +70,14 @@ function SignInPage() {
                         <Typography style={{ fontSize: '14px' , marginRight: '10px'  }}>
                             Don't you have an account?
                         </Typography>
-                        <Link href="#" underline="always" style={{ fontSize: '14px' }}>
+                        <Link href="/auth/signup" underline="always" style={{ fontSize: '14px' }}>
                             {'Sign Up'}
                         </Link>
                     </Box>
                 </Box>                
             </Box>
-            <Box className="imageBox">
-                <Typography> image area</Typography>
+            <Box className="imageBox" >
+                <img src={im} alt="" className="signInImg"/>
             </Box>
         </Box>
     )
