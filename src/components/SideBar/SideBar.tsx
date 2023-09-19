@@ -57,7 +57,7 @@ export default function SideBar({ children }: sidebarPropType) {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const [drawerWidth, setDrawerWidth] = useState<number | string>(isMobile ? mdw : ddw);
-    const [openDrawer, setOpenDrawer] = useState(true);
+    const [openDrawer, setOpenDrawer] = useState(false);
 
     useEffect(() => {
         if (isMobile) {
