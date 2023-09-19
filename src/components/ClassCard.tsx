@@ -97,10 +97,10 @@ function ClassCard({ item }: classCardPropsType) {
                                     fontSize: '0.9rem',
                                     fontWeight: '600',
                                 }}
-                                color='secondary'
+                                color='primary.light'
                             >{item.from_time}</Typography>
                             <Typography
-                                color='secondary'
+                                color='primary.light'
                             >|</Typography>
 
                             <Typography
@@ -108,7 +108,7 @@ function ClassCard({ item }: classCardPropsType) {
                                     fontSize: '0.9rem',
                                     fontWeight: '600',
                                 }}
-                                color='secondary'
+                                color='primary.light'
                             >{item.to_time}</Typography>
                         </Box>
                     </Box>
@@ -148,7 +148,7 @@ function ClassCard({ item }: classCardPropsType) {
                                             '&:after': {
                                                 content: '"|"',
                                                 pl: '0.5rem',
-                                                color: theme.palette.secondary.main || '#ccc'
+                                                color: theme.palette.primary.light || '#ccc'
                                             }
                                         }}
                                     >English {sub}</Typography>

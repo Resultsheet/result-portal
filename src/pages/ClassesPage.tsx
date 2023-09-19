@@ -4,12 +4,17 @@ import { classes } from "@/data"
 import ClassCard from "@/components/ClassCard"
 import PageTitle from "@/components/PageTitle"
 import SearchBar from "@/components/SearchBar"
+import { Add } from "@mui/icons-material"
+import FloatingButton from "@/components/FLoatingButton"
 
 function ClassesPage() {
+
+
     return (
         <>
             <PageTitle title="My Classes" tag="Explore Your Classes Today!" />
             <SearchBar />
+
             <Grid container spacing={3}>
                 {
                     classes.map((item, index) => (
@@ -23,7 +28,12 @@ function ClassesPage() {
                 }
 
             </Grid>
-            
+            <FloatingButton
+                onClick={() => { }}
+                content="New add Class"
+                color="secondary"
+                icon={<Add sx={{ mr: 1 }} />}
+            />
         </>
     )
 }

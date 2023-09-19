@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import '@/scss/sidebar.scss'
 import { Link, useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
-import { Box, SwipeableDrawer, AppBar, Toolbar, List, Typography, ListItem, ListItemText, Menu, Container, Avatar, Tooltip, MenuItem, IconButton, useMediaQuery } from '@mui/material';
+import { Box, SwipeableDrawer, AppBar, Toolbar, Typography, Menu, Container, Avatar, Tooltip, MenuItem, IconButton, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import { useAppSelector, useAppDispatch } from '@/Redux/store';
 import { removeUser } from '@/Redux/features/authSlice';
-import Footer from '../Footer';
 
-const drawerWidth = 200;
+import logo from '@/assets/logo-round.svg'
+
+const ddw = 220;
+const mdw = '75%';
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 interface sidebarPropType {
@@ -54,7 +56,19 @@ export default function SideBar({ children }: sidebarPropType) {
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    const [openDrawer, setOpenDrawer] = useState(false);
+    const [drawerWidth, setDrawerWidth] = useState<number | string>(isMobile ? mdw : ddw);
+    const [openDrawer, setOpenDrawer] = useState(true);
+
+    useEffect(() => {
+        if (isMobile) {
+            setDrawerWidth(mdw)
+        }
+        else {
+            setDrawerWidth(ddw)
+        }
+    }, [isMobile])
+
+
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -75,13 +89,36 @@ export default function SideBar({ children }: sidebarPropType) {
                                 fontSize: '1.5rem',
                             }} /></IconButton>
                                 :
-                                <Typography
-                                    variant="h6"
-                                    noWrap
-                                    sx={{ marginLeft: '0.75rem' }}
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        cursor: 'pointer',
+                                        gap: '0.75rem',
+
+                                    }}
                                 >
-                                    Result Sheet
-                                </Typography>
+                                    <img
+                                        style={{
+                                            height: '2rem',
+                                            width: '2rem',
+                                        }}
+                                        src={logo}
+                                        alt='Result Sheet'
+                                    />
+
+                                    <Typography
+                                        noWrap
+                                        sx={{
+                                            color: 'white',
+                                            fontWeight: '300',
+                                            fontSize: '1.2rem',
+                                        }}
+                                    >
+                                        Result Sheet
+                                    </Typography>
+
+                                </Box>
                         }
 
 
@@ -90,8 +127,14 @@ export default function SideBar({ children }: sidebarPropType) {
                             <Tooltip title="Open settings">
                                 <IconButton
                                     onClick={handleOpenUserMenu}
-                                    sx={{ p: 0 }}>
-                                    <Avatar alt="Remy Sharp" src={'https://source.boringavatars.com/beam/120/Stefan?colors=264653,f4a261,e76f51'} />
+                                    sx={{ p: 0, border: '3px solid #fff' }}>
+                                    <Avatar
+                                        sx={{
+                                            width: '2.2rem',
+                                            height: '2.2rem',
+                                        }}
+
+                                        alt="Remy Sharp" src={'https://source.boringavatars.com/beam/120/Stefan?colors=264653,f4a261,e76f51'} />
                                 </IconButton>
                             </Tooltip>
                             <Menu
@@ -136,41 +179,163 @@ export default function SideBar({ children }: sidebarPropType) {
                 sx={{
                     width: drawerWidth,
                     flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                    [`& .MuiDrawer-paper`]: {
+                        width: drawerWidth,
+                        backgroundColor: theme.palette.secondary.main,
+                        boxSizing: 'border-box',
+                        color: '#fff',
+                        paddingTop: '1rem',
+                        boxShadow: '2px 0px 5px rgba(0,0,0,0.2)',
+                    },
+                    [`& .MuiBackdrop-root`]: {
+                        backdropFilter: 'blur(2px)',
+                        backgroundColor: 'rgba(0,0,0,0.2)',
+                    }
                 }}
 
             >
                 <Toolbar />
-                <Box sx={{ overflow: 'hidden', marginInline: '1.5rem' }}>
-                    <List>
-                        {menuItems.map((text, index: number) => (
-                            <ListItem key={text} disablePadding className='sidebar-link'>
-                                {/* <ListItemButton> */}
-                                {/* <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon> */}
-                                <Link
-                                    key={index}
-                                    className="sidebar-link-text"
-                                    to={`/${currentUser.role.toLowerCase()}/${text.toLowerCase()}`}
-                                >
-                                    <ListItemText primary={text} />
-                                </Link>
-                                {/* </ListItemButton> */}
-                            </ListItem>
-                        ))}
-                    </List>
+                <Box sx={{ overflow: 'hidden', marginInline: '1.5rem', flexGrow: 1 }}>
+                    <Box>
+                        {
+                            menuItems.map((text: string, index: number) => (
+                                <>
+                                    <Link
+                                        key={index}
+                                        to={`/${currentUser.role.toLowerCase()}/${text.toLowerCase()}`}
+                                        style={{
+                                            textDecoration: 'none',
+                                        }}
+                                    >
+                                        <Typography
+                                            sx={{
+                                                // backgroundColor: 'red',
+                                                fontSize: '1rem',
+                                                fontWeight: 400,
+                                                mb: '0.2rem',
+                                                py: '0.5rem',
+                                                px: '1rem',
+                                                color: theme.palette.secondary.contrastText,
+                                                borderBottom: '1px solid transparent',
+                                                borderRadius: '0.5rem',
+                                                [`&:hover`]: {
+                                                    backgroundColor: theme.palette.primary.light,
+                                                    color: theme.palette.primary.contrastText,
+
+                                                }
+                                            }}
+                                        >
+                                            {text}
+                                        </Typography>
+                                    </Link>
+                                </>
+                            ))
+                        }
+                    </Box>
+
                 </Box>
+
+                {
+                    isMobile && <>
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                flexDirection: 'column',
+                                gap: '0.75rem',
+                                px: 2,
+                                py: 2,
+                                backgroundColor: '#00000008',
+                                borderTop: '1px solid rgba(0,0,0,0.2)',
+                            }}
+                        >
+                            {/* <Typography
+                                    sx={{
+                                        fontSize: '1rem',
+                                        color: 'rgba(255,255,255,0.9)'
+                                    }}
+                                >
+                                    &copy;
+                                </Typography> */}
+                            <img
+                                style={{
+                                    height: '2rem',
+                                    width: '2rem',
+                                }}
+                                src={logo}
+                                alt='Result Sheet'
+                            />
+
+                            <Typography
+                                noWrap
+                                sx={{
+                                    color: 'white',
+                                    fontWeight: '300',
+                                    fontSize: '1rem',
+                                }}
+                            >
+                                Result Sheet
+                            </Typography>
+
+
+                        </Box>
+                    </>
+                }
+                {
+                    isMobile && <>
+                        <Box
+                            sx={{
+                                width: '100%',
+                                backgroundColor: '#00000010',
+                                borderTop: '1px solid rgba(0,0,0,0.2)',
+                                px: 2,
+                                py: 2,
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+
+                            <Typography
+                                sx={{
+                                    fontSize: '0.5rem',
+                                    color: 'rgba(255,255,255,0.8)',
+                                    letterSpacing: '0.07rem',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                Made with ❤️ by <a className="link" target="_blank" href="https://janithpm.tech">JPM</a> & <a className="link" target="_blank" href="https://dasunidewani.github.io/">DDU</a>
+                            </Typography>
+                            {/* <Typography
+                                sx={{
+                                    fontSize: '0.5rem',
+                                    color: 'rgba(255,255,255,0.8)',
+                                    letterSpacing: '0.07rem',
+                                }}
+                            >
+                                by
+                            </Typography>
+                            <Typography
+                                sx={{
+                                    fontSize: '0.5rem',
+                                    color: 'rgba(255,255,255,0.8)',
+                                    letterSpacing: '0.07rem',
+                                }}
+                            >
+                                <a className="link" target="_blank" href="https://janithpm.tech">Janithpm</a> & <a className="link" target="_blank" href="https://dasunidewani.github.io/">DasuniDewani</a>
+                            </Typography> */}
+                        </Box>
+                    </>
+                }
             </SwipeableDrawer>
-            <div className='siteContent'>
-                <div className='children'>
-                    <Toolbar sx={{
-                        marginBottom: '1rem',
-                    }} />
-                    {children}
-                </div>
-                <Footer />
+            <div className='children'>
+                <Toolbar sx={{
+                    marginBottom: '1rem',
+                }} />
+                {children}
             </div>
+            {/* <Footer /> */}
         </Box>
     );
 }

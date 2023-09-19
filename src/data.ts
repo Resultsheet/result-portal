@@ -79,32 +79,32 @@ export const classes = [
         location: 'Classroom 2',
         subjects: ["2"]
     },
-    {
-        id: 3,
-        name: 'Science',
-        grade: '6',
-        mode: 'ONLINE',
-        type: 'GROUP',
-        cordinator: 'Mr. Robert Brown',
-        day: 'Tuesday',
-        from_time: '11:00am',
-        to_time: '1:00pm',
-        location: 'Virtual Classroom',
-        subjects: ["3"]
-    },
-    {
-        id: 4,
-        name: 'History',
-        grade: '7',
-        mode: 'IN-PERSON',
-        type: 'GROUP',
-        cordinator: 'Ms. Emily Wilson',
-        day: 'Thursday',
-        from_time: '2:00pm',
-        to_time: '4:00pm',
-        location: 'Classroom 3',
-        subjects: ["4"]
-    },
+    // {
+    //     id: 3,
+    //     name: 'Science',
+    //     grade: '6',
+    //     mode: 'ONLINE',
+    //     type: 'GROUP',
+    //     cordinator: 'Mr. Robert Brown',
+    //     day: 'Tuesday',
+    //     from_time: '11:00am',
+    //     to_time: '1:00pm',
+    //     location: 'Virtual Classroom',
+    //     subjects: ["3"]
+    // },
+    // {
+    //     id: 4,
+    //     name: 'History',
+    //     grade: '7',
+    //     mode: 'IN-PERSON',
+    //     type: 'GROUP',
+    //     cordinator: 'Ms. Emily Wilson',
+    //     day: 'Thursday',
+    //     from_time: '2:00pm',
+    //     to_time: '4:00pm',
+    //     location: 'Classroom 3',
+    //     subjects: ["4"]
+    // },
     // {
     //     id: 5,
     //     name: 'Mathematics',

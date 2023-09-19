@@ -3,8 +3,8 @@
 
 .link {
     text-decoration: none;
-    color: rgb(0, 0, 0);
-    font-weight: 600;
+    color: rgb(255, 255, 255);
+    font-weight: 500;
 }
 
 .flex-row {
@@ -21,6 +21,11 @@
 .flex-row-between-center {
     @extend .flex-row-between;
     align-items: center;
+}
+
+.flex-row-between-start {
+    @extend .flex-row-between;
+    align-items: flex-start;
 }
 
 .flex-row-between-end {
