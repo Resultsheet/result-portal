@@ -5,7 +5,9 @@ import { Outlet } from 'react-router-dom'
 function Layout() {
 
     return (
-        <SideBar><Outlet /></SideBar>
+        <>
+            <SideBar><Outlet /></SideBar>
+        </>
 
     )
 }

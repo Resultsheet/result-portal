@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import { useAppSelector, useAppDispatch } from '@/Redux/store';
 import { removeUser } from '@/Redux/features/authSlice';
+import Footer from '../Footer';
 
 const drawerWidth = 200;
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -161,11 +162,14 @@ export default function SideBar({ children }: sidebarPropType) {
                     </List>
                 </Box>
             </SwipeableDrawer>
-            <div className='children'>
-                <Toolbar sx={{
-                    marginBottom: '1rem',
-                }} />
-                {children}
+            <div className='siteContent'>
+                <div className='children'>
+                    <Toolbar sx={{
+                        marginBottom: '1rem',
+                    }} />
+                    {children}
+                </div>
+                <Footer />
             </div>
         </Box>
     );

@@ -1,26 +1,48 @@
 @import "variables";
 @import "mixins";
 
-.page-title {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    color: $dark;
+.link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
 
-    @include respond-to(sm) {
-        font-size: 2.5rem;
-    }
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
 
-    @include respond-to(md) {
-        font-size: 3rem;
-    }
+.flex-row-between {
+    @extend .flex-row;
+    justify-content: space-between;
+}
 
-    @include respond-to(lg) {
-        font-size: 3.5rem;
-    }
+.flex-row-between-center {
+    @extend .flex-row-between;
+    align-items: center;
+}
 
-    @include respond-to(xl) {
-        font-size: 4rem;
+.flex-row-between-end {
+    @extend .flex-row-between;
+    align-items: flex-end;
+}
+
+.flex-row-wrap {
+    @extend .flex-row;
+    flex-wrap: wrap;
+}
+
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+$i: 1;
+
+@for $i from 1 through 40 {
+    .flex-gap-#{$i} {
+        gap: #{$i * 2}px;
     }
 }

@@ -12,6 +12,13 @@ const theme = responsiveFontSizes(createTheme({
         secondary: {
             main: '#eb455f',
         },
+        success: {
+            main: '#31aa67',
+            light: '#5bbb87',
+        },
+        dark: {
+            main: '#000',
+        }
     },
     typography: {
         fontFamily: '"Poppins", "Lato", "Arial", sans-serif',

@@ -1,6 +1,5 @@
 export type classCardPropsType = {
     item: {
-
         id: number,
         name: string,
         grade: string,
@@ -12,6 +11,5 @@ export type classCardPropsType = {
         to_time: string,
         location: string,
         subjects: string[]
-
     }
 }

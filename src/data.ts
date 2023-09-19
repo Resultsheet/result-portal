@@ -64,14 +64,14 @@ export const classes = [
         from_time: '8:00am',
         to_time: '10:00am',
         location: 'Classroom 1',
-        subjects: ["1"]
+        subjects: ["1", '2', '3']
     },
     {
         id: 2,
         name: 'English',
         grade: '4',
         mode: 'IN-PERSON',
-        type: 'GROUP',
+        type: 'Hall',
         cordinator: 'Mrs. Jane Smith',
         day: 'Wednesday',
         from_time: '9:30am',
@@ -105,30 +105,30 @@ export const classes = [
         location: 'Classroom 3',
         subjects: ["4"]
     },
-    {
-        id: 5,
-        name: 'Mathematics',
-        grade: '5',
-        mode: 'ONLINE',
-        type: 'GROUP',
-        cordinator: 'Mr. Michael Johnson',
-        day: 'Wednesday',
-        from_time: '10:00am',
-        to_time: '12:00pm',
-        location: 'Virtual Classroom',
-        subjects: ["5"]
-    },
-    {
-        id: 6,
-        name: 'Physical Education',
-        grade: '8',
-        mode: 'IN-PERSON',
-        type: 'GROUP',
-        cordinator: 'Mrs. Susan Davis',
-        day: 'Friday',
-        from_time: '3:30pm',
-        to_time: '5:30pm',
-        location: 'Sports Ground',
-        subjects: ["6"]
-    }
+    // {
+    //     id: 5,
+    //     name: 'Mathematics',
+    //     grade: '5',
+    //     mode: 'ONLINE',
+    //     type: 'GROUP',
+    //     cordinator: 'Mr. Michael Johnson',
+    //     day: 'Wednesday',
+    //     from_time: '10:00am',
+    //     to_time: '12:00pm',
+    //     location: 'Virtual Classroom',
+    //     subjects: ["5"]
+    // },
+    // {
+    //     id: 6,
+    //     name: 'Physical Education',
+    //     grade: '8',
+    //     mode: 'IN-PERSON',
+    //     type: 'GROUP',
+    //     cordinator: 'Mrs. Susan Davis',
+    //     day: 'Friday',
+    //     from_time: '3:30pm',
+    //     to_time: '5:30pm',
+    //     location: 'Sports Ground',
+    //     subjects: ["6"]
+    // }
 ];

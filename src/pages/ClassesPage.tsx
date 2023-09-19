@@ -1,25 +1,29 @@
-import ClassCard from "@/components/ClassCard"
+import { Grid } from "@mui/material"
 import { classes } from "@/data"
-import { Box, Typography } from "@mui/material"
+
+import ClassCard from "@/components/ClassCard"
+import PageTitle from "@/components/PageTitle"
+import SearchBar from "@/components/SearchBar"
 
 function ClassesPage() {
     return (
         <>
-            <Typography
-                variant="h6"
-                className="page-title"
-            >My Classes</Typography>
-            <Box>
+            <PageTitle title="My Classes" tag="Explore Your Classes Today!" />
+            <SearchBar />
+            <Grid container spacing={3}>
                 {
                     classes.map((item, index) => (
-                        <ClassCard
-                            key={index}
-                            item={item}
-                        />
+                        <Grid key={index} item xs={12} lg={6}>
+                            <ClassCard
+                                key={index}
+                                item={item}
+                            />
+                        </Grid>
                     ))
                 }
 
-            </Box>
+            </Grid>
+            
         </>
     )
 }

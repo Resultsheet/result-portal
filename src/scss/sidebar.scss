@@ -1,14 +1,18 @@
-.children {
+.siteContent {
     min-height: 100dvh;
     overflow: hidden;
     flex-grow: 1;
-    margin-inline: 2rem;
+    // display: flex;
+    // flex-direction: column;
 
-    display: flex;
-    flex-direction: column;
+}
+
+.siteContent>.children {
+    margin-left: 2rem;
+    margin-right: 2rem;
 
     @media screen and (max-width: 768px) {
         margin-inline: 1rem;
+        margin-right: 1rem;
     }
-
 }
