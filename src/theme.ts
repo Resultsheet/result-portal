@@ -14,7 +14,7 @@ const theme = responsiveFontSizes(createTheme({
         },
     },
     typography: {
-        fontFamily: '"Roboto", "Lato", "Arial", sans-serif',
+        fontFamily: '"Poppins", "Lato", "Arial", sans-serif',
         fontSize: 14,
     },
     shape: {
