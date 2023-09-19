@@ -1,8 +1,8 @@
 
-function Class() {
+function ClassPage() {
     return (
         <div>Class</div>
     )
 }
 
-export default Class
+export default ClassPage

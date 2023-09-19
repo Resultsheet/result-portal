@@ -5,14 +5,15 @@ import ReduxProvider from "@/Redux/Provider"
 import theme from "@/theme"
 import Layout from "@/Layout"
 
-// import Home from "./pages/home/HomePage"
-import NoPageFound from "./pages/noPageFound/NoPageFound"
-import SignInPage from "./pages/signin/SignInPage"
-import SignupPage from "./pages/signup/SignupPage"
-import Class from "./pages/student/Class"
-import Classes from "./pages/student/Classes"
-import Results from "./pages/student/Results"
-import Exams from "./pages/student/Exams"
+import "@/scss/ui.scss"
+
+import NoPageFound from "./pages/NoPageFound"
+import SignInPage from "./pages/SignInPage"
+import SignupPage from "./pages/SignupPage"
+import ClassPage from "./pages/ClassPage"
+import ClassesPage from "./pages/ClassesPage"
+import ResultsPage from "./pages/ResultsPage"
+import ExamsPage from "./pages/ExamsPage"
 
 function App() {
 
@@ -24,11 +25,11 @@ function App() {
           <Routes>
 
             <Route path="" element={<Layout />}>
-              <Route path="/" element={<Classes />} />
-              <Route path="/class" element={<Classes />} />
-              <Route path="/class/:id" element={<Class />} />
-              <Route path="/exam/" element={<Exams />} />
-              <Route path="/exam/result/:id" element={<Results />} />
+              <Route path="/" element={<ClassesPage />} />
+              <Route path="/class" element={<ClassesPage />} />
+              <Route path="/class/:id" element={<ClassPage />} />
+              <Route path="/exam/" element={<ExamsPage />} />
+              <Route path="/exam/result/:id" element={<ResultsPage />} />
             </Route>
 
             <Route path="/auth" >

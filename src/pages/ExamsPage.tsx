@@ -1,8 +1,8 @@
 
-function Exams() {
+function ExamsPage() {
     return (
         <div>Exam(s)</div>
     )
 }
 
-export default Exams
+export default ExamsPage
