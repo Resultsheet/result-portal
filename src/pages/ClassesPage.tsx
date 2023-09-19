@@ -5,7 +5,7 @@ import ClassCard from "@/components/ClassCard"
 import PageTitle from "@/components/PageTitle"
 import SearchBar from "@/components/SearchBar"
 import { Add } from "@mui/icons-material"
-import FloatingButton from "@/components/FLoatingButton"
+import FloatingButton from "@/components/FloatingButton"
 
 function ClassesPage() {
 
