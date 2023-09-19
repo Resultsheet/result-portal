@@ -1,8 +1,9 @@
 import { useTheme } from "@emotion/react"
 import { Typography } from "@mui/material"
+import { MyTheme } from "@/theme"
 
 function PageTitle({ title, tag }: { title: string, tag?: string }) {
-    const theme = useTheme()
+    const theme = useTheme() as MyTheme
     return (
         <>
             <Typography

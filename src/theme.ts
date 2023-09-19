@@ -75,6 +75,9 @@ const theme = responsiveFontSizes(createTheme({
 
 export default theme;
 
+export type MyTheme = typeof theme
+
+
 
 // blue, black and white
 // primary: {
