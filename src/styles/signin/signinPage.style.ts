@@ -9,7 +9,12 @@ const classes = {
     signInBoxTitle: {
         fontSize: '2rem',
         fontWeight: 'bold',
-        marginBottom: '2em',
+    },
+    signInBoxSubTitle:{
+        fontSize: '1rem',
+        marginBottom: '1em',
+        color: '#767575 ',
+
     },
     signInBoxInput: {
         width: '100%',
