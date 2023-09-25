@@ -6,13 +6,13 @@
 .signInBox {
     padding: 20px;
     background: #f8f8f8 !important;
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     flex-direction: column; 
     align-items: center; 
     justify-content: center; 
     gap: 14px;
-    margin: 30;
+    // margin: 30;
 }
 .signInForm{
     width: 100%; 
@@ -35,8 +35,6 @@
 }
 
 .imageBox{
-    width: 100vh;
-    height: 100vh;
     overflow: hidden;
 }
 .signUpImage{
@@ -49,8 +47,5 @@
     .imageBox{
         display: none;
     }
-    .signInBox{
-        height:100vh;
-        width: 100vw;
-    }
+
 }

@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, FormControlLabel, Link, Switch, TextField, Typography } from "@mui/material"
+import { Box, Button, FormControl, FormControlLabel, Grid, Link, Switch, TextField, Typography } from "@mui/material"
 import { useNavigate } from "react-router-dom"
 
 import classes from "@/styles/signin/signinPage.style"
@@ -9,13 +9,26 @@ import '@/scss/signin.scss'
 function SignInPage() {
     const navigate = useNavigate()
     return (
-        <Box className = "mainContainer">
-            <Box
-            className="signInBox" // sass method eka
+        <Grid
+        container 
+        // className = "mainContainer"
+        >
+            <Grid item xs={12} lg={6}
+            sx={{
+                height: '100dvh',
+                display: 'flex',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                alignItems: 'center'
+            }}
+
             >
                 <Typography
                     variant="h4"
-                    sx={classes.signInBoxTitle} // mui style object method eka
+                    sx={{
+                        mb:3,
+                        fontWeight: 600
+                    }} // mui style object method eka
                 >Sign In
                 </Typography>
                 <Typography
@@ -75,11 +88,11 @@ function SignInPage() {
                         </Link>
                     </Box>
                 </Box>                
-            </Box>
-            <Box className="imageBox" >
+            </Grid>
+            <Grid item xs={12} lg={6} className="imageBox" >
                 <img src={im} alt="" className="signInImg"/>
-            </Box>
-        </Box>
+            </Grid>
+        </Grid>
     )
 }
 
